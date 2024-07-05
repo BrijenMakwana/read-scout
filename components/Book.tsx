@@ -15,6 +15,23 @@ const Book = () => {
         <Text style={styles.title}>clean code</Text>
 
         <Text style={styles.author}>Robert Cecil Martin</Text>
+
+        <View style={styles.ratingContainer}>
+          <Image
+            source={require('../assets/images/star.png')}
+            style={styles.star}
+          />
+          <Text style={styles.rating}>4.5</Text>
+        </View>
+
+        <Text style={styles.description}>
+          Even bad code can function. But if code isn’t clean, it can bring a
+          development organization to its knees. Every year, countless hours and
+          significant resources are lost because of poorly written code. But it
+          doesn’t have to be that way.
+        </Text>
+
+        <Text style={styles.pages}>400 pages</Text>
       </View>
     </View>
   );
@@ -34,7 +51,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   info: {
-    gap: 10,
+    gap: 15,
+    flex: 1,
   },
   title: {
     fontSize: 30,
@@ -42,7 +60,28 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   author: {
-    fontSize: 20,
+    fontSize: 18,
     textTransform: 'capitalize',
+    color: '#8ecae6',
+  },
+  ratingContainer: {
+    flexDirection: 'row',
+    gap: 10,
+    alignItems: 'center',
+  },
+  star: {
+    width: 25,
+    height: 25,
+  },
+  rating: {
+    fontSize: 15,
+    fontWeight: '500',
+  },
+  description: {
+    fontSize: 15,
+    color: '#adb5bd',
+  },
+  pages: {
+    fontSize: 15,
   },
 });
