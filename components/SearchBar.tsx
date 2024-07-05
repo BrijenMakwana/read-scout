@@ -1,12 +1,24 @@
 import React from 'react';
 import {TextInput, StyleSheet, View, Pressable, Text} from 'react-native';
 
-const SearchBar = () => {
+interface ISearchBar {
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  onPress: () => void;
+}
+
+const SearchBar = (props: ISearchBar) => {
+  const {setSearch, onPress} = props;
+
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} placeholder="search books" />
+      <TextInput
+        style={styles.input}
+        placeholder="search books"
+        onChangeText={setSearch}
+        onSubmitEditing={onPress}
+      />
 
-      <Pressable style={styles.btn}>
+      <Pressable style={styles.btn} onPress={onPress}>
         <Text style={styles.text}>search</Text>
       </Pressable>
     </View>
@@ -27,7 +39,6 @@ const styles = StyleSheet.create({
     flex: 1,
     borderBottomWidth: 1,
     borderColor: '#fff',
-    color: '#000',
     fontSize: 15,
   },
   btn: {

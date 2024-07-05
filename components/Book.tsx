@@ -1,37 +1,50 @@
 import React from 'react';
 import {View, Image, StyleSheet, Text} from 'react-native';
 
-const Book = () => {
+interface IBook {
+  title: string;
+  authors: string[];
+  averageRating: number;
+  description: string;
+  imageLinks: {
+    thumbnail: string;
+  };
+  pageCount: number;
+}
+
+const Book = (props: IBook) => {
+  const {title, description, imageLinks, pageCount, authors, averageRating} =
+    props;
+
   return (
     <View style={styles.container}>
       <Image
         source={{
-          uri: 'https://m.media-amazon.com/images/I/413za4fzZLL.jpg',
+          uri:
+            imageLinks?.thumbnail ||
+            'https://m.media-amazon.com/images/I/41zoxjP9lcL._AC_SY200_QL15_.jpg',
         }}
         style={styles.image}
       />
 
       <View style={styles.info}>
-        <Text style={styles.title}>clean code</Text>
+        <Text style={styles.title}>{title}</Text>
 
-        <Text style={styles.author}>Robert Cecil Martin</Text>
+        <Text style={styles.author}>{authors[0]}</Text>
 
         <View style={styles.ratingContainer}>
           <Image
             source={require('../assets/images/star.png')}
             style={styles.star}
           />
-          <Text style={styles.rating}>4.5</Text>
+          <Text style={styles.rating}>{averageRating || 'NA'}</Text>
         </View>
 
-        <Text style={styles.description}>
-          Even bad code can function. But if code isn’t clean, it can bring a
-          development organization to its knees. Every year, countless hours and
-          significant resources are lost because of poorly written code. But it
-          doesn’t have to be that way.
+        <Text style={styles.description} numberOfLines={5}>
+          {description}
         </Text>
 
-        <Text style={styles.pages}>400 pages</Text>
+        <Text style={styles.pages}>{pageCount} pages</Text>
       </View>
     </View>
   );
