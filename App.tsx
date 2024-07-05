@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import SearchBar from './components/SearchBar';
+import Book from './components/Book';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -15,11 +16,14 @@ const App = () => {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: '#fff',
       }}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <SearchBar />
-      <ScrollView contentInsetAdjustmentBehavior="automatic"></ScrollView>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <Book />
+        <Book />
+        <Book />
+      </ScrollView>
     </SafeAreaView>
   );
 };

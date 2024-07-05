@@ -4,11 +4,7 @@ import {TextInput, StyleSheet, View, Pressable, Text} from 'react-native';
 const SearchBar = () => {
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="search books"
-        placeholderTextColor="#939185"
-      />
+      <TextInput style={styles.input} placeholder="search books" />
 
       <Pressable style={styles.btn}>
         <Text style={styles.text}>search</Text>
@@ -22,25 +18,24 @@ export default SearchBar;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 10,
+    padding: 15,
     justifyContent: 'space-between',
     gap: 15,
   },
   input: {
     padding: 10,
     flex: 1,
-    borderWidth: 1,
-    borderColor: '#000',
-    borderRadius: 50,
+    borderBottomWidth: 1,
+    borderColor: '#fff',
     color: '#000',
     fontSize: 15,
   },
   btn: {
-    backgroundColor: '#8DECB4',
+    backgroundColor: '#fca311',
     paddingHorizontal: 15,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 15,
+    borderRadius: 5,
   },
   text: {
     color: '#000',
