@@ -71,11 +71,12 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '500',
     textTransform: 'capitalize',
+    color: '#000',
   },
   author: {
     fontSize: 18,
     textTransform: 'capitalize',
-    color: '#8ecae6',
+    color: '#fca311',
   },
   ratingContainer: {
     flexDirection: 'row',
@@ -89,10 +90,11 @@ const styles = StyleSheet.create({
   rating: {
     fontSize: 15,
     fontWeight: '500',
+    color: '#000',
   },
   description: {
     fontSize: 15,
-    color: '#adb5bd',
+    color: '#686D76',
   },
   pages: {
     fontSize: 15,

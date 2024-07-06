@@ -14,6 +14,7 @@ const SearchBar = (props: ISearchBar) => {
       <TextInput
         style={styles.input}
         placeholder="search books"
+        placeholderTextColor="#686D76"
         onChangeText={setSearch}
         onSubmitEditing={onPress}
       />
@@ -38,8 +39,9 @@ const styles = StyleSheet.create({
     padding: 10,
     flex: 1,
     borderBottomWidth: 1,
-    borderColor: '#fff',
+    borderColor: '#000',
     fontSize: 15,
+    color: '#000',
   },
   btn: {
     backgroundColor: '#fca311',

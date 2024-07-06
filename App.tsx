@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import {FlatList, SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import {FlatList} from 'react-native';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
 
 import SearchBar from './components/SearchBar';
 import Book from './components/Book';
@@ -8,6 +10,8 @@ import useSearch from './hooks/useSearch';
 import Divider from './components/Divider';
 
 const queryClient = new QueryClient();
+
+const Stack = createStackNavigator();
 
 const Books = () => {
   const [search, setSearch] = useState('');
@@ -29,17 +33,16 @@ const Books = () => {
 };
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <QueryClientProvider client={queryClient}>
-      <SafeAreaView
-        style={{
-          flex: 1,
-        }}>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <Books />
-      </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen name="Home" component={Books} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </QueryClientProvider>
   );
 };

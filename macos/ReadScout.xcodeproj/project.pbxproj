@@ -11,10 +11,11 @@
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
-		CB36144520BFA0342F859429 /* libPods-ReadScout-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F64ADE364865241D10E94D /* libPods-ReadScout-macOS.a */; };
+		C5E215E7DD4169C096351FB5 /* libPods-ReadScout-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CB5A1B06BAE0B9AE8D87F8 /* libPods-ReadScout-macOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12CB5A1B06BAE0B9AE8D87F8 /* libPods-ReadScout-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReadScout-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* ReadScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		514201492437B4B30078DB4F /* ReadScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5142014B2437B4B30078DB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -24,10 +25,9 @@
 		514201562437B4B40078DB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		514201572437B4B40078DB4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		514201592437B4B40078DB4F /* ReadScout.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReadScout.entitlements; sourceTree = "<group>"; };
-		74A27D7BAA82F1C13FD8A5D2 /* Pods-ReadScout-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadScout-macOS.debug.xcconfig"; path = "Target Support Files/Pods-ReadScout-macOS/Pods-ReadScout-macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		90F64ADE364865241D10E94D /* libPods-ReadScout-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReadScout-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1F7952CC8E76C37DDE22A51 /* Pods-ReadScout-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadScout-macOS.release.xcconfig"; path = "Target Support Files/Pods-ReadScout-macOS/Pods-ReadScout-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		C3CA74DD578B41D3F79EB4CF /* Pods-ReadScout-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadScout-macOS.release.xcconfig"; path = "Target Support Files/Pods-ReadScout-macOS/Pods-ReadScout-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F315122F084CA46CF8B21DB6 /* Pods-ReadScout-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadScout-macOS.debug.xcconfig"; path = "Target Support Files/Pods-ReadScout-macOS/Pods-ReadScout-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,18 +42,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB36144520BFA0342F859429 /* libPods-ReadScout-macOS.a in Frameworks */,
+				C5E215E7DD4169C096351FB5 /* libPods-ReadScout-macOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28601E4D7A294800C8773745 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F315122F084CA46CF8B21DB6 /* Pods-ReadScout-macOS.debug.xcconfig */,
+				C3CA74DD578B41D3F79EB4CF /* Pods-ReadScout-macOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				90F64ADE364865241D10E94D /* libPods-ReadScout-macOS.a */,
+				12CB5A1B06BAE0B9AE8D87F8 /* libPods-ReadScout-macOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,7 +96,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				EF40310B43A10DD141F8F9A6 /* Pods */,
+				28601E4D7A294800C8773745 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -100,16 +110,6 @@
 				514201492437B4B30078DB4F /* ReadScout.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EF40310B43A10DD141F8F9A6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				74A27D7BAA82F1C13FD8A5D2 /* Pods-ReadScout-macOS.debug.xcconfig */,
-				E1F7952CC8E76C37DDE22A51 /* Pods-ReadScout-macOS.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +144,7 @@
 				514201462437B4B30078DB4F /* Frameworks */,
 				514201472437B4B30078DB4F /* Resources */,
 				381D8A6E24576A4E00465D17 /* Bundle React Native code and images */,
-				E032D9FF26680C11C68EA903 /* [CP] Copy Pods Resources */,
+				E6349AEEE735C1A6B6820405 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,7 +283,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native-macos/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native-macos/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 		};
-		E032D9FF26680C11C68EA903 /* [CP] Copy Pods Resources */ = {
+		E6349AEEE735C1A6B6820405 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,7 +397,7 @@
 		};
 		5142015B2437B4B40078DB4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74A27D7BAA82F1C13FD8A5D2 /* Pods-ReadScout-macOS.debug.xcconfig */;
+			baseConfigurationReference = F315122F084CA46CF8B21DB6 /* Pods-ReadScout-macOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -418,7 +418,7 @@
 		};
 		5142015C2437B4B40078DB4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1F7952CC8E76C37DDE22A51 /* Pods-ReadScout-macOS.release.xcconfig */;
+			baseConfigurationReference = C3CA74DD578B41D3F79EB4CF /* Pods-ReadScout-macOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
