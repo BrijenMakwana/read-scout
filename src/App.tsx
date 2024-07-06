@@ -8,6 +8,7 @@ import SearchBar from './components/SearchBar';
 import Book from './components/Book';
 import useSearch from './hooks/useSearch';
 import Divider from './components/Divider';
+import BookScreen from './screens/BookScreen';
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ const Books = () => {
 
       <FlatList
         data={data}
-        renderItem={({item}) => <Book {...item.volumeInfo} />}
+        renderItem={({item}) => <Book {...item.volumeInfo} id={item.id} />}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Divider}
       />
@@ -41,6 +42,7 @@ const App = () => {
             headerShown: false,
           }}>
           <Stack.Screen name="Home" component={Books} />
+          <Stack.Screen name="Book" component={BookScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </QueryClientProvider>

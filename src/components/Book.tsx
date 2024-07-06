@@ -1,7 +1,9 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text} from 'react-native';
+import {View, Image, StyleSheet, Text, Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 interface IBook {
+  id: string;
   title: string;
   authors: string[];
   averageRating: number;
@@ -13,11 +15,18 @@ interface IBook {
 }
 
 const Book = (props: IBook) => {
-  const {title, description, imageLinks, pageCount, authors, averageRating} =
-    props;
+  const {id, title, imageLinks, pageCount, authors, averageRating} = props;
+
+  const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={styles.container}
+      onPress={() =>
+        navigation.navigate('Book', {
+          bookId: id,
+        })
+      }>
       <Image
         source={{
           uri:
@@ -34,19 +43,15 @@ const Book = (props: IBook) => {
 
         <View style={styles.ratingContainer}>
           <Image
-            source={require('../assets/images/star.png')}
+            source={require('../../assets/images/star.png')}
             style={styles.star}
           />
           <Text style={styles.rating}>{averageRating || 'NA'}</Text>
         </View>
 
-        <Text style={styles.description} numberOfLines={5}>
-          {description}
-        </Text>
-
         <Text style={styles.pages}>{pageCount} pages</Text>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
