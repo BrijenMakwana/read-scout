@@ -30,7 +30,7 @@ const Book = (props: IBook) => {
       <View style={styles.info}>
         <Text style={styles.title}>{title}</Text>
 
-        <Text style={styles.author}>{authors[0]}</Text>
+        <Text style={styles.author}>{(authors && authors[0]) || 'NA'}</Text>
 
         <View style={styles.ratingContainer}>
           <Image
@@ -98,5 +98,6 @@ const styles = StyleSheet.create({
   },
   pages: {
     fontSize: 15,
+    color: '#000',
   },
 });

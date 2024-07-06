@@ -10,7 +10,7 @@ export default Divider;
 const styles = StyleSheet.create({
   container: {
     height: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#686D76',
     width: '95%',
     alignSelf: 'center',
     marginVertical: 5,
