@@ -6,7 +6,7 @@ const GoBack = () => {
   const navigation = useNavigation();
 
   return (
-    <Pressable onPress={() => navigation.goBack()} style={styles.btn}>
+    <Pressable onPress={() => navigation.goBack()}>
       <Image
         source={require('../../assets/images/back.png')}
         style={styles.back}
@@ -18,9 +18,6 @@ const GoBack = () => {
 export default GoBack;
 
 const styles = StyleSheet.create({
-  btn: {
-    marginVertical: 15,
-  },
   back: {
     width: 50,
     height: 50,

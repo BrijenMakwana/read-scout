@@ -13,6 +13,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#686D76',
     width: '95%',
     alignSelf: 'center',
-    marginVertical: 5,
   },
 });
