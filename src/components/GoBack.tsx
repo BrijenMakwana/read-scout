@@ -6,7 +6,7 @@ const GoBack = () => {
   const navigation = useNavigation();
 
   return (
-    <Pressable onPress={() => navigation.goBack()}>
+    <Pressable onPress={() => navigation.goBack()} style={styles.btn}>
       <Image
         source={require('../../assets/images/back.png')}
         style={styles.back}
@@ -21,5 +21,8 @@ const styles = StyleSheet.create({
   back: {
     width: 50,
     height: 50,
+  },
+  btn: {
+    cursor: 'pointer',
   },
 });

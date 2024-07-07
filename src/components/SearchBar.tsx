@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
+    cursor: 'pointer',
   },
   text: {
     color: '#fff',
