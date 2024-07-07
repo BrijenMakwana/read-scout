@@ -1,13 +1,16 @@
 import React from 'react';
-import {ScrollView, Text, StyleSheet} from 'react-native';
+import {ScrollView, Text, StyleSheet, useWindowDimensions} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import useBook from '../hooks/useBook';
 import GoBack from '../components/GoBack';
 import Book from '../components/Book';
+import RenderHtml from 'react-native-render-html';
 
 const BookScreen = () => {
   const route = useRoute();
   const {bookId} = route.params;
+
+  const {width} = useWindowDimensions();
 
   const {data, isFetching, error} = useBook(bookId);
 
@@ -21,13 +24,18 @@ const BookScreen = () => {
     <ScrollView
       style={styles.container}
       contentContainerStyle={{
-        padding: 10,
+        padding: 15,
       }}>
       <GoBack />
 
       <Book {...data.volumeInfo} />
 
-      <Text style={styles.description}>{description}</Text>
+      <RenderHtml
+        contentWidth={width}
+        source={{
+          html: description,
+        }}
+      />
     </ScrollView>
   );
 };
