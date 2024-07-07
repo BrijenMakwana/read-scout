@@ -1,5 +1,11 @@
 import React from 'react';
-import {ScrollView, Text, StyleSheet, useWindowDimensions} from 'react-native';
+import {
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  useWindowDimensions,
+} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import useBook from '../hooks/useBook';
 import GoBack from '../components/GoBack';
@@ -18,17 +24,26 @@ const BookScreen = () => {
 
   if (error) return <Text>Error</Text>;
 
-  const {description} = data.volumeInfo;
+  const {description, categories} = data.volumeInfo;
 
   return (
     <ScrollView
       style={styles.container}
       contentContainerStyle={{
         padding: 15,
+        gap: 10,
       }}>
       <GoBack />
 
       <Book {...data.volumeInfo} />
+
+      <View style={styles.categories}>
+        {categories.map((category, index) => (
+          <Text key={index} style={styles.category}>
+            {category}
+          </Text>
+        ))}
+      </View>
 
       <RenderHtml
         contentWidth={width}
@@ -47,9 +62,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF6F6',
     flex: 1,
   },
-  description: {
-    fontSize: 16,
-    color: '#686D76',
-    padding: 10,
+  categories: {
+    flexDirection: 'row',
+    gap: 10,
+    flexWrap: 'wrap',
+  },
+  category: {
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 15,
+    fontSize: 13,
+    color: '#000',
   },
 });
