@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, Text, Image, StyleSheet, View} from 'react-native';
+import {ScrollView, Text, StyleSheet} from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import useBook from '../hooks/useBook';
 import GoBack from '../components/GoBack';
@@ -21,7 +21,7 @@ const BookScreen = () => {
     <ScrollView
       style={styles.container}
       contentContainerStyle={{
-        padding: 15,
+        padding: 10,
       }}>
       <GoBack />
 

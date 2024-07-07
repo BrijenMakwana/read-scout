@@ -62,26 +62,27 @@ const styles = StyleSheet.create({
     padding: 15,
     flexDirection: 'row',
     gap: 20,
+    flex: 1,
   },
   image: {
-    width: 220,
-    height: 300,
+    width: 200,
+    height: 270,
     borderRadius: 5,
   },
   info: {
-    gap: 15,
+    gap: 10,
     flex: 1,
   },
   title: {
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: '500',
     textTransform: 'capitalize',
     color: '#000',
   },
   author: {
-    fontSize: 18,
+    fontSize: 16,
     textTransform: 'capitalize',
-    color: '#fca311',
+    color: '#686D76',
   },
   ratingContainer: {
     flexDirection: 'row',
@@ -96,10 +97,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     color: '#000',
-  },
-  description: {
-    fontSize: 15,
-    color: '#686D76',
   },
   pages: {
     fontSize: 15,

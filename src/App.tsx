@@ -29,9 +29,16 @@ const Books = () => {
 
       <FlatList
         data={data}
+        numColumns={2}
         renderItem={({item}) => <Book {...item.volumeInfo} id={item.id} />}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Divider}
+        columnWrapperStyle={{
+          gap: 5,
+        }}
+        contentContainerStyle={{
+          gap: 5,
+        }}
       />
     </View>
   );
