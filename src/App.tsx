@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
@@ -20,7 +20,11 @@ const Books = () => {
   const {data, refetch} = useSearch(search);
 
   return (
-    <>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: '#FFF6F6',
+      }}>
       <SearchBar setSearch={setSearch} onPress={refetch} />
 
       <FlatList
@@ -29,7 +33,7 @@ const Books = () => {
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Divider}
       />
-    </>
+    </View>
   );
 };
 

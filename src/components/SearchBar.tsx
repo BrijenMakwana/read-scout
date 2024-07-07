@@ -44,14 +44,14 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   btn: {
-    backgroundColor: '#fca311',
+    backgroundColor: '#2F3645',
     paddingHorizontal: 15,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
   },
   text: {
-    color: '#000',
+    color: '#fff',
     textTransform: 'capitalize',
   },
 });

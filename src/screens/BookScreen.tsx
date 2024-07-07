@@ -19,6 +19,7 @@ const BookScreen = () => {
 
   return (
     <ScrollView
+      style={styles.container}
       contentContainerStyle={{
         padding: 15,
       }}>
@@ -34,6 +35,10 @@ const BookScreen = () => {
 export default BookScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#FFF6F6',
+    flex: 1,
+  },
   description: {
     fontSize: 16,
     color: '#686D76',
