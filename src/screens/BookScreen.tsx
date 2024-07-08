@@ -5,8 +5,6 @@ import {
   Text,
   StyleSheet,
   useWindowDimensions,
-  Pressable,
-  Linking,
 } from 'react-native';
 import {useRoute} from '@react-navigation/native';
 import useBook from '../hooks/useBook';
@@ -26,7 +24,7 @@ const BookScreen = () => {
 
   if (error) return <Text>Error</Text>;
 
-  const {description, categories, previewLink} = data.volumeInfo;
+  const {description, categories} = data.volumeInfo;
 
   return (
     <ScrollView
@@ -46,12 +44,6 @@ const BookScreen = () => {
           </Text>
         ))}
       </View>
-
-      <Pressable
-        style={styles.viewBtn}
-        onPress={async () => await Linking.openURL(previewLink)}>
-        <Text style={styles.btnText}>view book</Text>
-      </Pressable>
 
       <RenderHtml
         contentWidth={width}
@@ -82,18 +74,5 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     fontSize: 13,
     color: '#000',
-  },
-  viewBtn: {
-    backgroundColor: '#2F3645',
-    alignSelf: 'flex-start',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 30,
-    cursor: 'pointer',
-  },
-  btnText: {
-    fontSize: 17,
-    textTransform: 'capitalize',
-    color: '#fff',
   },
 });
