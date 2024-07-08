@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, Pressable} from 'react-native';
+import {View, Image, StyleSheet, Text, Pressable, Linking} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 interface IBook {
@@ -12,10 +12,19 @@ interface IBook {
     thumbnail: string;
   };
   pageCount: number;
+  previewLink: string;
 }
 
 const Book = (props: IBook) => {
-  const {id, title, imageLinks, pageCount, authors, averageRating} = props;
+  const {
+    id,
+    title,
+    imageLinks,
+    pageCount,
+    authors,
+    averageRating,
+    previewLink,
+  } = props;
 
   const navigation = useNavigation();
 
@@ -50,6 +59,12 @@ const Book = (props: IBook) => {
         </View>
 
         <Text style={styles.pages}>{pageCount} pages</Text>
+
+        <Pressable
+          style={styles.viewBtn}
+          onPress={async () => await Linking.openURL(previewLink)}>
+          <Text style={styles.btnText}>view book</Text>
+        </Pressable>
       </View>
     </Pressable>
   );
@@ -102,5 +117,19 @@ const styles = StyleSheet.create({
   pages: {
     fontSize: 15,
     color: '#000',
+  },
+  viewBtn: {
+    backgroundColor: '#2F3645',
+    alignSelf: 'flex-start',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
+    cursor: 'pointer',
+    marginTop: 10,
+  },
+  btnText: {
+    fontSize: 15,
+    textTransform: 'capitalize',
+    color: '#fff',
   },
 });
