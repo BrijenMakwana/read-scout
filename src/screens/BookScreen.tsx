@@ -38,7 +38,7 @@ const BookScreen = () => {
       <Book {...data.volumeInfo} />
 
       <View style={styles.categories}>
-        {categories.map((category, index) => (
+        {categories?.map((category, index) => (
           <Text key={index} style={styles.category}>
             {category}
           </Text>
