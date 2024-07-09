@@ -18,11 +18,12 @@ const GoBack = () => {
 export default GoBack;
 
 const styles = StyleSheet.create({
+  btn: {
+    cursor: 'pointer',
+    alignSelf: 'flex-start',
+  },
   back: {
     width: 50,
     height: 50,
-  },
-  btn: {
-    cursor: 'pointer',
   },
 });
