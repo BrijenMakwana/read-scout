@@ -9,6 +9,7 @@ import Book from './components/Book';
 import useSearch from './hooks/useSearch';
 import Divider from './components/Divider';
 import BookScreen from './screens/BookScreen';
+import BookShelvesScreen from './screens/BookShelvesScreen';
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => {
           }}>
           <Stack.Screen name="Home" component={Books} />
           <Stack.Screen name="Book" component={BookScreen} />
+          <Stack.Screen name="BookShelves" component={BookShelvesScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </QueryClientProvider>
