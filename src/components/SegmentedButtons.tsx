@@ -18,11 +18,19 @@ const SegmentedButtons = (props: ISegmentedButtons) => {
           style={[
             styles.btn,
             {
-              backgroundColor: value === btn ? '#FFCBCB' : 'transparent',
+              backgroundColor: value === btn ? '#4ecdc4' : 'transparent',
             },
           ]}
           onPress={() => setValue(btn)}>
-          <Text style={styles.btnText}>{btn}</Text>
+          <Text
+            style={[
+              styles.btnText,
+              {
+                color: value === btn ? '#000' : '#fff',
+              },
+            ]}>
+            {btn}
+          </Text>
         </Pressable>
       ))}
     </View>
@@ -43,11 +51,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
+    borderColor: '#4ecdc4',
     paddingVertical: 10,
     width: 170,
   },
   btnText: {
-    color: '#000',
     fontSize: 15,
     fontWeight: '500',
     textTransform: 'capitalize',
