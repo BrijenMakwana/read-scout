@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, Pressable, Linking} from 'react-native';
+import {View, Image, StyleSheet, Text, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 interface IBook {
@@ -12,7 +12,6 @@ interface IBook {
     thumbnail: string;
   };
   pageCount: number;
-  previewLink: string;
 }
 
 const Book = (props: IBook) => {
@@ -23,7 +22,7 @@ const Book = (props: IBook) => {
     pageCount,
     authors,
     averageRating,
-    previewLink,
+    description,
   } = props;
 
   const navigation = useNavigation();
@@ -60,11 +59,9 @@ const Book = (props: IBook) => {
 
         <Text style={styles.pages}>{pageCount} pages</Text>
 
-        <Pressable
-          style={styles.viewBtn}
-          onPress={async () => await Linking.openURL(previewLink)}>
-          <Text style={styles.btnText}>view book</Text>
-        </Pressable>
+        <Text style={styles.description} numberOfLines={5}>
+          {description}
+        </Text>
       </View>
     </Pressable>
   );
@@ -74,10 +71,9 @@ export default Book;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
+    padding: 20,
     flexDirection: 'row',
     gap: 20,
-    flex: 1,
     cursor: 'pointer',
   },
   image: {
@@ -86,7 +82,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   info: {
-    gap: 10,
+    gap: 12,
     flex: 1,
   },
   title: {
@@ -118,18 +114,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#000',
   },
-  viewBtn: {
-    backgroundColor: '#2F3645',
-    alignSelf: 'flex-start',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
-    cursor: 'pointer',
-    marginTop: 10,
-  },
-  btnText: {
+  description: {
     fontSize: 15,
-    textTransform: 'capitalize',
-    color: '#fff',
+    color: '#000',
   },
 });
