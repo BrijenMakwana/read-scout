@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput, StyleSheet, View, Pressable, Text} from 'react-native';
+import {View, TextInput, StyleSheet, Pressable, Text} from 'react-native';
 
 interface ISearchBar {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
@@ -30,29 +30,30 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
   container: {
+    padding: 20,
     flexDirection: 'row',
-    padding: 15,
     justifyContent: 'space-between',
     gap: 15,
   },
   input: {
-    padding: 10,
-    flex: 1,
-    borderBottomWidth: 1,
-    borderColor: '#000',
+    padding: 15,
     fontSize: 15,
     color: '#000',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    flex: 1,
   },
   btn: {
-    backgroundColor: '#2F3645',
+    backgroundColor: '#4ecdc4',
     paddingHorizontal: 15,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 5,
+    borderRadius: 10,
     cursor: 'pointer',
   },
   text: {
     color: '#fff',
     textTransform: 'capitalize',
+    fontWeight: '500',
   },
 });

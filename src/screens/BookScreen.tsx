@@ -9,7 +9,7 @@ import {
 import {useRoute} from '@react-navigation/native';
 import useBook from '../hooks/useBook';
 import GoBack from '../components/GoBack';
-import Book from '../components/Book';
+import BookItem from '../components/BookItem';
 import RenderHtml from 'react-native-render-html';
 
 const BookScreen = () => {
@@ -35,7 +35,11 @@ const BookScreen = () => {
       }}>
       <GoBack />
 
-      <Book {...data.volumeInfo} />
+      <BookItem
+        {...data.volumeInfo}
+        isPressable={false}
+        isDescription={false}
+      />
 
       <View style={styles.categories}>
         {categories?.map((category, index) => (
@@ -59,7 +63,7 @@ export default BookScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF6F6',
+    backgroundColor: '#292f36',
     flex: 1,
   },
   categories: {
@@ -69,10 +73,11 @@ const styles = StyleSheet.create({
   },
   category: {
     borderWidth: 1,
+    borderColor: '#4ecdc4',
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 15,
     fontSize: 13,
-    color: '#000',
+    color: '#4ecdc4',
   },
 });

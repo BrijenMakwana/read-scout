@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, Pressable, Linking} from 'react-native';
+import {View, Image, StyleSheet, Text, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 interface IBook {
@@ -12,10 +12,14 @@ interface IBook {
     thumbnail: string;
   };
   pageCount: number;
-  previewLink: string;
 }
 
-const Book = (props: IBook) => {
+interface IBookItem extends IBook {
+  isPressable: boolean;
+  isDescription: boolean;
+}
+
+const BookItem = (props: IBookItem) => {
   const {
     id,
     title,
@@ -23,7 +27,9 @@ const Book = (props: IBook) => {
     pageCount,
     authors,
     averageRating,
-    previewLink,
+    description,
+    isPressable = true,
+    isDescription = true,
   } = props;
 
   const navigation = useNavigation();
@@ -35,7 +41,8 @@ const Book = (props: IBook) => {
         navigation.navigate('Book', {
           bookId: id,
         })
-      }>
+      }
+      disabled={!isPressable}>
       <Image
         source={{
           uri:
@@ -60,24 +67,23 @@ const Book = (props: IBook) => {
 
         <Text style={styles.pages}>{pageCount} pages</Text>
 
-        <Pressable
-          style={styles.viewBtn}
-          onPress={async () => await Linking.openURL(previewLink)}>
-          <Text style={styles.btnText}>view book</Text>
-        </Pressable>
+        {isDescription && (
+          <Text style={styles.description} numberOfLines={5}>
+            {description}
+          </Text>
+        )}
       </View>
     </Pressable>
   );
 };
 
-export default Book;
+export default BookItem;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
+    padding: 10,
     flexDirection: 'row',
     gap: 20,
-    flex: 1,
     cursor: 'pointer',
   },
   image: {
@@ -86,19 +92,20 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   info: {
-    gap: 10,
+    gap: 12,
     flex: 1,
   },
   title: {
     fontSize: 22,
     fontWeight: '500',
     textTransform: 'capitalize',
-    color: '#000',
+    color: '#fff',
   },
   author: {
     fontSize: 16,
     textTransform: 'capitalize',
-    color: '#686D76',
+    color: '#4ecdc4',
+    fontWeight: '500',
   },
   ratingContainer: {
     flexDirection: 'row',
@@ -112,24 +119,14 @@ const styles = StyleSheet.create({
   rating: {
     fontSize: 15,
     fontWeight: '500',
-    color: '#000',
+    color: '#fff',
   },
   pages: {
     fontSize: 15,
-    color: '#000',
+    color: '#fff',
   },
-  viewBtn: {
-    backgroundColor: '#2F3645',
-    alignSelf: 'flex-start',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
-    cursor: 'pointer',
-    marginTop: 10,
-  },
-  btnText: {
+  description: {
     fontSize: 15,
-    textTransform: 'capitalize',
     color: '#fff',
   },
 });

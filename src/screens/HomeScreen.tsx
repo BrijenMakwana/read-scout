@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {View, FlatList} from 'react-native';
 import SearchBar from '../components/SearchBar';
-import Book from '../components/Book';
+import BookItem from '../components/BookItem';
 import useSearch from '../hooks/useSearch';
 import Divider from '../components/Divider';
 import {StyleSheet} from 'react-native-macos';
@@ -18,15 +18,12 @@ const HomeScreen = () => {
 
       <FlatList
         data={data}
-        numColumns={2}
-        renderItem={({item}) => <Book {...item.volumeInfo} id={item.id} />}
+        renderItem={({item}) => <BookItem {...item.volumeInfo} id={item.id} />}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Divider}
-        columnWrapperStyle={{
-          gap: 5,
-        }}
         contentContainerStyle={{
           gap: 5,
+          padding: 10,
         }}
       />
     </View>
@@ -38,6 +35,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF6F6',
+    backgroundColor: '#292f36',
   },
 });
