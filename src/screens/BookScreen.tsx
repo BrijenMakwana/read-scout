@@ -59,7 +59,7 @@ export default BookScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF6F6',
+    backgroundColor: '#292f36',
     flex: 1,
   },
   categories: {
@@ -69,10 +69,11 @@ const styles = StyleSheet.create({
   },
   category: {
     borderWidth: 1,
+    borderColor: '#4ecdc4',
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 15,
     fontSize: 13,
-    color: '#000',
+    color: '#4ecdc4',
   },
 });

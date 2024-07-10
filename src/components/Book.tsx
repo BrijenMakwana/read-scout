@@ -71,7 +71,7 @@ export default Book;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 10,
     flexDirection: 'row',
     gap: 20,
     cursor: 'pointer',
@@ -89,12 +89,13 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '500',
     textTransform: 'capitalize',
-    color: '#000',
+    color: '#fff',
   },
   author: {
     fontSize: 16,
     textTransform: 'capitalize',
-    color: '#686D76',
+    color: '#4ecdc4',
+    fontWeight: '500',
   },
   ratingContainer: {
     flexDirection: 'row',
@@ -108,14 +109,14 @@ const styles = StyleSheet.create({
   rating: {
     fontSize: 15,
     fontWeight: '500',
-    color: '#000',
+    color: '#fff',
   },
   pages: {
     fontSize: 15,
-    color: '#000',
+    color: '#fff',
   },
   description: {
     fontSize: 15,
-    color: '#000',
+    color: '#fff',
   },
 });

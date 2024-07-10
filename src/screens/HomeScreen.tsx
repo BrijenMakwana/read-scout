@@ -23,6 +23,7 @@ const HomeScreen = () => {
         ItemSeparatorComponent={Divider}
         contentContainerStyle={{
           gap: 5,
+          padding: 10,
         }}
       />
     </View>
@@ -34,6 +35,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF6F6',
+    backgroundColor: '#292f36',
   },
 });
