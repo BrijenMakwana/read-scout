@@ -14,7 +14,12 @@ interface IBook {
   pageCount: number;
 }
 
-const Book = (props: IBook) => {
+interface IBookItem extends IBook {
+  isPressable: boolean;
+  isDescription: boolean;
+}
+
+const BookItem = (props: IBookItem) => {
   const {
     id,
     title,
@@ -23,6 +28,8 @@ const Book = (props: IBook) => {
     authors,
     averageRating,
     description,
+    isPressable = true,
+    isDescription = true,
   } = props;
 
   const navigation = useNavigation();
@@ -34,7 +41,8 @@ const Book = (props: IBook) => {
         navigation.navigate('Book', {
           bookId: id,
         })
-      }>
+      }
+      disabled={!isPressable}>
       <Image
         source={{
           uri:
@@ -59,15 +67,17 @@ const Book = (props: IBook) => {
 
         <Text style={styles.pages}>{pageCount} pages</Text>
 
-        <Text style={styles.description} numberOfLines={5}>
-          {description}
-        </Text>
+        {isDescription && (
+          <Text style={styles.description} numberOfLines={5}>
+            {description}
+          </Text>
+        )}
       </View>
     </Pressable>
   );
 };
 
-export default Book;
+export default BookItem;
 
 const styles = StyleSheet.create({
   container: {

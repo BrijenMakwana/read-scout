@@ -9,7 +9,7 @@ import {
 import {useRoute} from '@react-navigation/native';
 import useBook from '../hooks/useBook';
 import GoBack from '../components/GoBack';
-import Book from '../components/Book';
+import BookItem from '../components/BookItem';
 import RenderHtml from 'react-native-render-html';
 
 const BookScreen = () => {
@@ -35,7 +35,11 @@ const BookScreen = () => {
       }}>
       <GoBack />
 
-      <Book {...data.volumeInfo} />
+      <BookItem
+        {...data.volumeInfo}
+        isPressable={false}
+        isDescription={false}
+      />
 
       <View style={styles.categories}>
         {categories?.map((category, index) => (

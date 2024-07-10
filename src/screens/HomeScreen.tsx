@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {View, FlatList} from 'react-native';
 import SearchBar from '../components/SearchBar';
-import Book from '../components/Book';
+import BookItem from '../components/BookItem';
 import useSearch from '../hooks/useSearch';
 import Divider from '../components/Divider';
 import {StyleSheet} from 'react-native-macos';
@@ -18,7 +18,7 @@ const HomeScreen = () => {
 
       <FlatList
         data={data}
-        renderItem={({item}) => <Book {...item.volumeInfo} id={item.id} />}
+        renderItem={({item}) => <BookItem {...item.volumeInfo} id={item.id} />}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Divider}
         contentContainerStyle={{
