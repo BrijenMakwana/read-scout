@@ -4,8 +4,8 @@ import {useNavigation} from '@react-navigation/native';
 import {IBook} from '../types';
 
 interface IBookItem extends IBook {
-  isPressable: boolean;
-  isDescription: boolean;
+  isPressable?: boolean;
+  isDescription?: boolean;
 }
 
 const BookItem = (props: IBookItem) => {
