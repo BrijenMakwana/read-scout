@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import SegmentedButtons from '../components/SegmentedButtons';
 import useBookShelves from '../store';
-import BookShelfBook from '../components/BookShelfBook';
+import BookShelfItem from '../components/BookShelfItem';
 import GoBack from '../components/GoBack';
 import Divider from '../components/Divider';
 
@@ -24,7 +24,7 @@ const BookShelvesScreen = () => {
 
       <FlatList
         data={books}
-        renderItem={({item}) => <BookShelfBook bookId={item} />}
+        renderItem={({item}) => <BookShelfItem bookId={item} />}
         keyExtractor={item => item}
         ItemSeparatorComponent={Divider}
         contentContainerStyle={{

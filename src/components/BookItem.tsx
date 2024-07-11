@@ -1,36 +1,17 @@
 import React from 'react';
 import {View, Image, StyleSheet, Text, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-
-interface IBook {
-  id: string;
-  title: string;
-  authors: string[];
-  averageRating: number;
-  description: string;
-  imageLinks: {
-    thumbnail: string;
-  };
-  pageCount: number;
-}
+import {IBook} from '../types';
 
 interface IBookItem extends IBook {
-  isPressable: boolean;
-  isDescription: boolean;
+  isPressable?: boolean;
+  isDescription?: boolean;
 }
 
 const BookItem = (props: IBookItem) => {
-  const {
-    id,
-    title,
-    imageLinks,
-    pageCount,
-    authors,
-    averageRating,
-    description,
-    isPressable = true,
-    isDescription = true,
-  } = props;
+  const {id, volumeInfo, isPressable = true, isDescription = true} = props;
+  const {title, imageLinks, pageCount, authors, averageRating, description} =
+    volumeInfo;
 
   const navigation = useNavigation();
 
@@ -55,7 +36,7 @@ const BookItem = (props: IBookItem) => {
       <View style={styles.info}>
         <Text style={styles.title}>{title}</Text>
 
-        <Text style={styles.author}>{(authors && authors[0]) || 'NA'}</Text>
+        <Text style={styles.author}>{authors.join(', ')}</Text>
 
         {averageRating && (
           <View style={styles.ratingContainer}>

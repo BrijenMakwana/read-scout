@@ -18,7 +18,7 @@ const HomeScreen = () => {
 
       <FlatList
         data={data}
-        renderItem={({item}) => <BookItem {...item.volumeInfo} id={item.id} />}
+        renderItem={({item}) => <BookItem {...item} />}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={Divider}
         contentContainerStyle={{
