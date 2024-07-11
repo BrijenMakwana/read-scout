@@ -24,7 +24,7 @@ const BookScreen = () => {
 
   if (error) return <Text>Error</Text>;
 
-  const {description, categories} = data.volumeInfo;
+  const {description, categories} = data!.volumeInfo;
 
   return (
     <ScrollView
@@ -35,11 +35,7 @@ const BookScreen = () => {
       }}>
       <GoBack />
 
-      <BookItem
-        {...data.volumeInfo}
-        isPressable={false}
-        isDescription={false}
-      />
+      <BookItem {...data} isPressable={false} isDescription={false} />
 
       <View style={styles.categories}>
         {categories?.map((category, index) => (

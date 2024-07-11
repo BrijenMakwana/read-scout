@@ -10,7 +10,7 @@ const BookShelfBook = (props: IBookShelfBook) => {
   const {bookId} = props;
   const {data} = useBook(bookId);
 
-  return <BookItem {...data.volumeInfo} />;
+  return <BookItem {...data} />;
 };
 
 export default BookShelfBook;
