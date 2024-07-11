@@ -2,15 +2,15 @@ import React from 'react';
 import useBook from '../hooks/useBook';
 import BookItem from './BookItem';
 
-interface IBookShelfBook {
+interface IBookShelfItem {
   bookId: string;
 }
 
-const BookShelfBook = (props: IBookShelfBook) => {
+const BookShelfItem = (props: IBookShelfItem) => {
   const {bookId} = props;
   const {data} = useBook(bookId);
 
   return <BookItem {...data} />;
 };
 
-export default BookShelfBook;
+export default BookShelfItem;
