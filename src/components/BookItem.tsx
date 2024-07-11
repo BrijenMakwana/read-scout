@@ -57,13 +57,15 @@ const BookItem = (props: IBookItem) => {
 
         <Text style={styles.author}>{(authors && authors[0]) || 'NA'}</Text>
 
-        <View style={styles.ratingContainer}>
-          <Image
-            source={require('../../assets/images/star.png')}
-            style={styles.star}
-          />
-          <Text style={styles.rating}>{averageRating || 'NA'}</Text>
-        </View>
+        {averageRating && (
+          <View style={styles.ratingContainer}>
+            <Image
+              source={require('../../assets/images/star.png')}
+              style={styles.star}
+            />
+            <Text style={styles.rating}>{averageRating}</Text>
+          </View>
+        )}
 
         <Text style={styles.pages}>{pageCount} pages</Text>
 
