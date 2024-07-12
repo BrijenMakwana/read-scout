@@ -5,10 +5,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
 import BookScreen from './screens/BookScreen';
 import BookShelvesScreen from './screens/BookShelvesScreen';
+import {StackParamList} from './types';
 
 const queryClient = new QueryClient();
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<StackParamList>();
 
 const App = () => {
   return (
