@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Image, StyleSheet, Text, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {IBook} from '../types';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 interface IBookItem extends IBook {
   isPressable?: boolean;
@@ -40,10 +41,7 @@ const BookItem = (props: IBookItem) => {
 
         {averageRating && (
           <View style={styles.ratingContainer}>
-            <Image
-              source={require('../../assets/images/star.png')}
-              style={styles.star}
-            />
+            <Icon name="star" size={25} color="#FFEF00" />
             <Text style={styles.rating}>{averageRating}</Text>
           </View>
         )}
