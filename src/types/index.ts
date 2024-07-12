@@ -12,3 +12,9 @@ export interface IBook {
     categories: string[];
   };
 }
+
+export type StackParamList = {
+  Home: undefined;
+  Book: {bookId: string};
+  BookShelves: undefined;
+};
