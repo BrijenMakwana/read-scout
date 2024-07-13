@@ -14,6 +14,8 @@ import RenderHtml from 'react-native-render-html';
 import {RouteProp} from '@react-navigation/native';
 import {StackParamList} from '../types';
 import SelectBookShelf from '../components/SelectBookShelf';
+import moment from 'moment';
+import Divider from '../components/Divider';
 
 type BookScreenRouteProp = RouteProp<StackParamList, 'Book'>;
 
@@ -29,7 +31,7 @@ const BookScreen = () => {
 
   if (error) return <Text>Error</Text>;
 
-  const {description, categories} = data!.volumeInfo;
+  const {description, categories, publisher, publishedDate} = data!.volumeInfo;
 
   return (
     <ScrollView
@@ -52,6 +54,12 @@ const BookScreen = () => {
           </Text>
         ))}
       </View>
+
+      <Text style={styles.publisher}>
+        Published by {publisher} on {moment(publishedDate).format('LL')}
+      </Text>
+
+      <Text style={styles.heading}>overview:</Text>
 
       <RenderHtml
         contentWidth={width}
@@ -88,5 +96,15 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     fontSize: 13,
     color: '#4ecdc4',
+  },
+  publisher: {
+    fontSize: 15,
+    fontWeight: '500',
+  },
+  heading: {
+    fontSize: 15,
+    fontWeight: '500',
+    color: '#4ecdc4',
+    textTransform: 'capitalize',
   },
 });

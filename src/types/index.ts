@@ -10,6 +10,8 @@ export interface IBook {
     };
     pageCount: number;
     categories: string[];
+    publisher: string;
+    publishedDate: string;
   };
 }
 

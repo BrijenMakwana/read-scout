@@ -17,6 +17,7 @@
     "@tanstack/react-query": "^5.50.1",
     "@types/react-native-vector-icons": "^6.4.18",
     "axios": "^1.7.2",
+    "moment": "^2.30.1",
     "react": "18.2.0",
     "react-native": "0.71.0",
     "react-native-dropdown-picker": "^5.4.6",
