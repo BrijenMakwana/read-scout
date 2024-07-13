@@ -13,6 +13,7 @@ import BookItem from '../components/BookItem';
 import RenderHtml from 'react-native-render-html';
 import {RouteProp} from '@react-navigation/native';
 import {StackParamList} from '../types';
+import SelectBookShelf from '../components/SelectBookShelf';
 
 type BookScreenRouteProp = RouteProp<StackParamList, 'Book'>;
 
@@ -37,7 +38,10 @@ const BookScreen = () => {
         padding: 15,
         gap: 15,
       }}>
-      <GoBack />
+      <View style={styles.header}>
+        <GoBack />
+        <SelectBookShelf />
+      </View>
 
       <BookItem {...data} isPressable={false} isDescription={false} />
 
@@ -65,6 +69,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#292f36',
     flex: 1,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   categories: {
     flexDirection: 'row',

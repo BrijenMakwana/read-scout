@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 20,
     cursor: 'pointer',
+    zIndex: -1,
   },
   image: {
     width: 200,
