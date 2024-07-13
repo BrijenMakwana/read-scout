@@ -46,7 +46,7 @@ const BookItem = (props: IBookItem) => {
       <View style={styles.info}>
         <Text style={styles.title}>{title}</Text>
 
-        <Text style={styles.author}>{authors.join(', ')}</Text>
+        <Text style={styles.author}>{authors?.join(', ')}</Text>
 
         {averageRating && (
           <View style={styles.ratingContainer}>
