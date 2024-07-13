@@ -97,10 +97,6 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: 'center',
   },
-  star: {
-    width: 25,
-    height: 25,
-  },
   rating: {
     fontSize: 15,
     fontWeight: '500',

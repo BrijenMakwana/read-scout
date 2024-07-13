@@ -41,10 +41,6 @@
 	<string>NSApplication</string>
 	<key>NSSupportsAutomaticTermination</key>
 	<true/>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>ITSWatchOnlyContainer</key>
-	<false/>
 	<key>ATSApplicationFontsPath</key>
 	<string>Fonts</string>
 	<key>NSSupportsSuddenTermination</key>
