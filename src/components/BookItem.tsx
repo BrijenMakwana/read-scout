@@ -22,7 +22,12 @@ const BookItem = (props: IBookItem) => {
 
   return (
     <Pressable
-      style={styles.container}
+      style={[
+        styles.container,
+        {
+          cursor: isPressable ? 'pointer' : 'default',
+        },
+      ]}
       onPress={() =>
         navigation.navigate('Book', {
           bookId: id,
@@ -69,7 +74,6 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     gap: 20,
-    cursor: 'pointer',
     zIndex: -1,
   },
   image: {

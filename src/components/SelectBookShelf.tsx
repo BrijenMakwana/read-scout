@@ -35,5 +35,6 @@ export default SelectBookShelf;
 const styles = StyleSheet.create({
   container: {
     width: 300,
+    cursor: 'pointer',
   },
 });
