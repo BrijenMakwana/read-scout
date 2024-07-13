@@ -22,7 +22,12 @@ const BookItem = (props: IBookItem) => {
 
   return (
     <Pressable
-      style={styles.container}
+      style={[
+        styles.container,
+        {
+          cursor: isPressable ? 'pointer' : 'default',
+        },
+      ]}
       onPress={() =>
         navigation.navigate('Book', {
           bookId: id,
@@ -41,7 +46,7 @@ const BookItem = (props: IBookItem) => {
       <View style={styles.info}>
         <Text style={styles.title}>{title}</Text>
 
-        <Text style={styles.author}>{authors.join(', ')}</Text>
+        <Text style={styles.author}>{authors?.join(', ')}</Text>
 
         {averageRating && (
           <View style={styles.ratingContainer}>
@@ -69,7 +74,7 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     gap: 20,
-    cursor: 'pointer',
+    zIndex: -1,
   },
   image: {
     width: 200,
@@ -96,10 +101,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 10,
     alignItems: 'center',
-  },
-  star: {
-    width: 25,
-    height: 25,
   },
   rating: {
     fontSize: 15,
