@@ -14,15 +14,17 @@ const TickIcon = () => <Icon name="check" size={25} color="#4ecdc4" />;
 const SelectBookShelf = (props: ISelectBookShelf) => {
   const {bookId} = props;
 
+  const {addBook, books} = useBookShelves();
+
+  const book = books.find(item => item.bookId === bookId);
+
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState(book?.bookShelfId);
   const [items, setItems] = useState([
     {label: 'Want to Read', value: BookShelves.WantToRead},
     {label: 'Read', value: BookShelves.Read},
     {label: 'Currently Reading', value: BookShelves.CurrentlyReading},
   ]);
-
-  const {addBook} = useBookShelves();
 
   return (
     <DropDownPicker
