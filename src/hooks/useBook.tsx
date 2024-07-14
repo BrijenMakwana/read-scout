@@ -12,7 +12,7 @@ const useBook = (bookId: string) => {
   };
 
   return useQuery({
-    queryKey: [bookId + 'book details'],
+    queryKey: [bookId],
     queryFn: getBook,
   });
 };

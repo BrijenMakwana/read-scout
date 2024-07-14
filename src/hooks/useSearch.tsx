@@ -17,7 +17,7 @@ const useSearch = (query: string) => {
   };
 
   return useQuery({
-    queryKey: [query + 'books'],
+    queryKey: [query],
     queryFn: searchBooks,
     enabled: false,
   });
