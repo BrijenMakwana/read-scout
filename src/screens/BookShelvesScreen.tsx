@@ -5,9 +5,10 @@ import useBookShelves from '../store';
 import BookShelfItem from '../components/BookShelfItem';
 import GoBack from '../components/GoBack';
 import Divider from '../components/Divider';
+import {BookShelves} from '../types';
 
 const BookShelvesScreen = () => {
-  const [selectedBtn, setSelectedBtn] = useState('read');
+  const [selectedBtn, setSelectedBtn] = useState(BookShelves.Read);
 
   const {books} = useBookShelves();
 
@@ -16,16 +17,29 @@ const BookShelvesScreen = () => {
       <View style={styles.topContainer}>
         <GoBack />
         <SegmentedButtons
-          buttons={['want to read', 'read', 'currently reading']}
+          buttons={[
+            {
+              label: 'want to read',
+              value: BookShelves.WantToRead,
+            },
+            {
+              label: 'read',
+              value: BookShelves.Read,
+            },
+            {
+              label: 'currently reading',
+              value: BookShelves.CurrentlyReading,
+            },
+          ]}
           value={selectedBtn}
           setValue={setSelectedBtn}
         />
       </View>
 
       <FlatList
-        data={books}
-        renderItem={({item}) => <BookShelfItem bookId={item} />}
-        keyExtractor={item => item}
+        data={books.filter(item => item.bookShelfId === selectedBtn)}
+        renderItem={({item}) => <BookShelfItem {...item} />}
+        keyExtractor={item => item.bookId}
         ItemSeparatorComponent={Divider}
         contentContainerStyle={{
           gap: 5,

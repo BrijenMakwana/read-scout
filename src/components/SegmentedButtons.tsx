@@ -1,10 +1,16 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {BookShelves} from '../types';
+
+interface ISegmentedButton {
+  label: string;
+  value: BookShelves;
+}
 
 interface ISegmentedButtons {
-  buttons: string[];
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  buttons: ISegmentedButton[];
+  value: BookShelves;
+  setValue: React.Dispatch<React.SetStateAction<BookShelves>>;
 }
 
 const SegmentedButtons = (props: ISegmentedButtons) => {
@@ -18,18 +24,18 @@ const SegmentedButtons = (props: ISegmentedButtons) => {
           style={[
             styles.btn,
             {
-              backgroundColor: value === btn ? '#4ecdc4' : 'transparent',
+              backgroundColor: btn.value === value ? '#4ecdc4' : 'transparent',
             },
           ]}
-          onPress={() => setValue(btn)}>
+          onPress={() => setValue(btn.value)}>
           <Text
             style={[
               styles.btnText,
               {
-                color: value === btn ? '#000' : '#fff',
+                color: btn.value === value ? '#000' : '#fff',
               },
             ]}>
-            {btn}
+            {btn.label}
           </Text>
         </Pressable>
       ))}

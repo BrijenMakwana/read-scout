@@ -15,7 +15,6 @@ import {RouteProp} from '@react-navigation/native';
 import {StackParamList} from '../types';
 import SelectBookShelf from '../components/SelectBookShelf';
 import moment from 'moment';
-import Divider from '../components/Divider';
 
 type BookScreenRouteProp = RouteProp<StackParamList, 'Book'>;
 
@@ -42,7 +41,7 @@ const BookScreen = () => {
       }}>
       <View style={styles.header}>
         <GoBack />
-        <SelectBookShelf />
+        <SelectBookShelf bookId={bookId} />
       </View>
 
       <BookItem {...data} isPressable={false} isDescription={false} />

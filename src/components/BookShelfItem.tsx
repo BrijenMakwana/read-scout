@@ -5,6 +5,7 @@ import BookItem from './BookItem';
 
 interface IBookShelfItem {
   bookId: string;
+  bookShelfId: number;
 }
 
 const BookShelfItem = (props: IBookShelfItem) => {
