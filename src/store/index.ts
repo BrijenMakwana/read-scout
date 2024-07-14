@@ -12,6 +12,10 @@ const useBookShelves = create(set => ({
         },
       ],
     })),
+  removeBook: bookId =>
+    set(state => ({
+      books: state.books.filter(book => book.bookId !== bookId),
+    })),
 }));
 
 export default useBookShelves;
