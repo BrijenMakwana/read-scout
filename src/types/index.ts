@@ -12,6 +12,7 @@ export interface IBook {
     categories: string[];
     publisher: string;
     publishedDate: string;
+    previewLink: string;
   };
 }
 

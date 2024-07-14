@@ -15,6 +15,7 @@ import {RouteProp} from '@react-navigation/native';
 import {StackParamList} from '../types';
 import SelectBookShelf from '../components/SelectBookShelf';
 import moment from 'moment';
+import ExternalLink from '../components/ExternalLink';
 
 type BookScreenRouteProp = RouteProp<StackParamList, 'Book'>;
 
@@ -30,7 +31,8 @@ const BookScreen = () => {
 
   if (error) return <Text>Error</Text>;
 
-  const {description, categories, publisher, publishedDate} = data!.volumeInfo;
+  const {description, categories, publisher, publishedDate, previewLink} =
+    data!.volumeInfo;
 
   return (
     <ScrollView
@@ -57,6 +59,8 @@ const BookScreen = () => {
       <Text style={styles.publisher}>
         Published by {publisher} on {moment(publishedDate).format('LL')}
       </Text>
+
+      <ExternalLink previewLink={previewLink} />
 
       <Text style={styles.heading}>overview:</Text>
 
