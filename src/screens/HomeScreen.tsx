@@ -6,6 +6,7 @@ import BookItem from '../components/BookItem';
 import useSearch from '../hooks/useSearch';
 import Divider from '../components/Divider';
 import {StyleSheet} from 'react-native-macos';
+import GoToBookShelves from '../components/GoToBookShelves';
 
 const HomeScreen = () => {
   const [search, setSearch] = useState('');
@@ -16,6 +17,7 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <SearchBar setSearch={setSearch} onPress={refetch} />
 
+      <GoToBookShelves />
       <FlatList
         data={data}
         renderItem={({item}) => <BookItem {...item} />}

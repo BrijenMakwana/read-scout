@@ -24,8 +24,8 @@ const BookShelvesScreen = () => {
 
       <FlatList
         data={books}
-        renderItem={({item}) => <BookShelfItem bookId={item} />}
-        keyExtractor={item => item}
+        renderItem={({item}) => <BookShelfItem {...item} />}
+        keyExtractor={item => item.bookId}
         ItemSeparatorComponent={Divider}
         contentContainerStyle={{
           gap: 5,
