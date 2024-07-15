@@ -1,7 +1,7 @@
 import {useQuery} from '@tanstack/react-query';
 import {GoogleGenerativeAI} from '@google/generative-ai';
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const genAI = new GoogleGenerativeAI('');
 
 const model = genAI.getGenerativeModel({model: 'gemini-1.5-flash'});
 
@@ -14,16 +14,11 @@ const useAI = (prompt: string) => {
     return text;
   };
 
-  const {data, ...rest} = useQuery({
-    queryKey: ['summary'],
+  return useQuery({
+    queryKey: [prompt],
     queryFn: generateContent,
     enabled: false,
   });
-
-  return {
-    summary: data,
-    ...rest,
-  };
 };
 
 export default useAI;
