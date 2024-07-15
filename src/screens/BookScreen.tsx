@@ -16,6 +16,7 @@ import {StackParamList} from '../types';
 import SelectBookShelf from '../components/SelectBookShelf';
 import moment from 'moment';
 import ExternalLink from '../components/ExternalLink';
+import BookSummary from '../components/BookSummary';
 
 type BookScreenRouteProp = RouteProp<StackParamList, 'Book'>;
 
@@ -31,8 +32,15 @@ const BookScreen = () => {
 
   if (error) return <Text>Error</Text>;
 
-  const {description, categories, publisher, publishedDate, previewLink} =
-    data!.volumeInfo;
+  const {
+    title,
+    authors,
+    description,
+    categories,
+    publisher,
+    publishedDate,
+    previewLink,
+  } = data!.volumeInfo;
 
   return (
     <ScrollView
@@ -70,6 +78,8 @@ const BookScreen = () => {
           html: description,
         }}
       />
+
+      <BookSummary title={title} authors={authors} />
     </ScrollView>
   );
 };

@@ -14,16 +14,11 @@ const useAI = (prompt: string) => {
     return text;
   };
 
-  const {data, ...rest} = useQuery({
-    queryKey: ['summary'],
+  return useQuery({
+    queryKey: [prompt],
     queryFn: generateContent,
     enabled: false,
   });
-
-  return {
-    summary: data,
-    ...rest,
-  };
 };
 
 export default useAI;
