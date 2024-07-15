@@ -34,7 +34,9 @@ const SelectBookShelf = (props: ISelectBookShelf) => {
       setOpen={setOpen}
       setValue={setValue}
       onChangeValue={bookShelfId =>
-        book ? updateBook(bookId, bookShelfId) : addBook(bookId, bookShelfId)
+        book
+          ? updateBook(bookId, bookShelfId as BookShelves)
+          : addBook(bookId, bookShelfId as BookShelves)
       }
       setItems={setItems}
       listMode="SCROLLVIEW"

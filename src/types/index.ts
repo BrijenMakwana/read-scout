@@ -30,5 +30,5 @@ export enum BookShelves {
 
 export interface IBookShelfItem {
   bookId: string;
-  bookShelfId: number;
+  bookShelfId: BookShelves;
 }
