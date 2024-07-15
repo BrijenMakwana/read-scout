@@ -1,6 +1,13 @@
 import {create} from 'zustand';
+import {BookShelves, IBookShelfItem} from '../types';
 
-const useBookShelves = create(set => ({
+interface IBookShelves {
+  books: IBookShelfItem[];
+  addBook: (bookId: string, bookShelfId: BookShelves) => void;
+  removeBook: (bookId: string) => void;
+}
+
+const useBookShelves = create<IBookShelves>()(set => ({
   books: [],
   addBook: (bookId, bookShelfId) =>
     set(state => ({
