@@ -27,3 +27,8 @@ export enum BookShelves {
   Read,
   CurrentlyReading,
 }
+
+export interface IBookShelfItem {
+  bookId: string;
+  bookShelfId: BookShelves;
+}

@@ -4,11 +4,7 @@ import useBook from '../hooks/useBook';
 import BookItem from './BookItem';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import useBookShelves from '../store';
-
-interface IBookShelfItem {
-  bookId: string;
-  bookShelfId: number;
-}
+import {IBookShelfItem} from '../types';
 
 const BookShelfItem = (props: IBookShelfItem) => {
   const {bookId} = props;
