@@ -15,9 +15,11 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <SearchBar setSearch={setSearch} onPress={refetch} />
+      <View style={styles.topContainer}>
+        <GoToBookShelves />
+        <SearchBar setSearch={setSearch} onPress={refetch} />
+      </View>
 
-      <GoToBookShelves />
       <FlatList
         data={data}
         renderItem={({item}) => <BookItem {...item} />}
@@ -38,5 +40,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#292f36',
+  },
+  topContainer: {
+    flexDirection: 'row',
+    padding: 20,
+    gap: 15,
   },
 });

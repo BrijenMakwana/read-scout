@@ -32,10 +32,10 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 15,
+    flex: 1,
   },
   input: {
     padding: 15,
