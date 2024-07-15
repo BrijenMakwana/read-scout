@@ -14,7 +14,7 @@ const TickIcon = () => <Icon name="check" size={25} color="#4ecdc4" />;
 const SelectBookShelf = (props: ISelectBookShelf) => {
   const {bookId} = props;
 
-  const {addBook, books} = useBookShelves();
+  const {addBook, updateBook, books} = useBookShelves();
 
   const book = books.find(item => item.bookId === bookId);
 
@@ -33,7 +33,9 @@ const SelectBookShelf = (props: ISelectBookShelf) => {
       items={items}
       setOpen={setOpen}
       setValue={setValue}
-      onChangeValue={bookShelfId => addBook(bookId, bookShelfId)}
+      onChangeValue={bookShelfId =>
+        book ? updateBook(bookId, bookShelfId) : addBook(bookId, bookShelfId)
+      }
       setItems={setItems}
       listMode="SCROLLVIEW"
       containerStyle={styles.container}

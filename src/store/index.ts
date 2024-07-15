@@ -5,6 +5,7 @@ interface IBookShelves {
   books: IBookShelfItem[];
   addBook: (bookId: string, bookShelfId: BookShelves) => void;
   removeBook: (bookId: string) => void;
+  updateBook: (bookId: string, bookShelfId: BookShelves) => void;
 }
 
 const useBookShelves = create<IBookShelves>()(set => ({
@@ -22,6 +23,18 @@ const useBookShelves = create<IBookShelves>()(set => ({
   removeBook: bookId =>
     set(state => ({
       books: state.books.filter(book => book.bookId !== bookId),
+    })),
+  updateBook: (bookId, bookShelfId) =>
+    set(state => ({
+      books: state.books.map(book => {
+        if (book.bookId === bookId) {
+          return {
+            ...book,
+            bookShelfId: bookShelfId,
+          };
+        }
+        return book;
+      }),
     })),
 }));
 
