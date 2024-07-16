@@ -45,5 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 20,
     gap: 15,
+    maxWidth: 1200,
+    alignSelf: 'center',
   },
 });
