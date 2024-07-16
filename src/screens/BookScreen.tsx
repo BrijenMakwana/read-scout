@@ -17,6 +17,7 @@ import SelectBookShelf from '../components/SelectBookShelf';
 import moment from 'moment';
 import ExternalLink from '../components/ExternalLink';
 import BookSummary from '../components/BookSummary';
+import Loading from '../components/Loading';
 
 type BookScreenRouteProp = RouteProp<StackParamList, 'Book'>;
 
@@ -28,7 +29,7 @@ const BookScreen = () => {
 
   const {data, isFetching, error} = useBook(bookId);
 
-  if (isFetching) return <Text>Loading...</Text>;
+  if (isFetching) return <Loading />;
 
   if (error) return <Text>Error</Text>;
 

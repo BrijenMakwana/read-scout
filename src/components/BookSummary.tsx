@@ -3,6 +3,7 @@ import useAI from '../hooks/useAI';
 import {Pressable, StyleSheet, Text, useWindowDimensions} from 'react-native';
 import RenderHTML from 'react-native-render-html';
 import Divider from './Divider';
+import Loading from './Loading';
 
 interface IBookSummary {
   title: string;
@@ -20,7 +21,7 @@ const BookSummary = (props: IBookSummary) => {
 
   const {data, isFetching, error, refetch} = useAI(prompt);
 
-  if (isFetching) return <Text>Generating Summary..</Text>;
+  if (isFetching) return <Loading />;
 
   if (error) return <Text>Error</Text>;
 

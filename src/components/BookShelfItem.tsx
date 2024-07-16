@@ -5,6 +5,7 @@ import BookItem from './BookItem';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import useBookShelves from '../store';
 import {IBookShelfItem} from '../types';
+import Loading from './Loading';
 
 const BookShelfItem = (props: IBookShelfItem) => {
   const {bookId} = props;
@@ -13,7 +14,7 @@ const BookShelfItem = (props: IBookShelfItem) => {
 
   const {removeBook} = useBookShelves();
 
-  if (isFetching) return <Text>Loading...</Text>;
+  if (isFetching) return <Loading />;
 
   if (error) return <Text>Error</Text>;
 

@@ -30,14 +30,14 @@ const useBookShelves = create<IBookShelves>()(set => ({
           bookShelfId,
         },
       ];
-      syncWithLocalStorage(updatedBooks); // Sync after updating state
+      syncWithLocalStorage(updatedBooks);
       return {books: updatedBooks};
     });
   },
   removeBook: bookId => {
     set(state => {
       const updatedBooks = state.books.filter(book => book.bookId !== bookId);
-      syncWithLocalStorage(updatedBooks); // Sync after updating state
+      syncWithLocalStorage(updatedBooks);
       return {books: updatedBooks};
     });
   },
@@ -52,7 +52,7 @@ const useBookShelves = create<IBookShelves>()(set => ({
         }
         return book;
       });
-      syncWithLocalStorage(updatedBooks); // Sync after updating state
+      syncWithLocalStorage(updatedBooks);
       return {books: updatedBooks};
     });
   },
