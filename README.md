@@ -49,10 +49,10 @@
 ## Screenshots
 
 <img src="https://i.imgur.com/DfC8Xqh.png" alt="screenshot 1"/>
-<img src="https://i.imgur.com/X8SRs3U.png" alt="screenshot 2/>
+<img src="https://i.imgur.com/X8SRs3U.png" alt="screenshot 2"/>
 <img src="https://i.imgur.com/75Qs2ao.png" alt="screenshot 3"/>
-<img src="https://i.imgur.com/aHHqe3J.png" alt="screenshot 4"/>
-<img src="https://i.imgur.com/azlPqp0.png" alt="screenshot 5"/>
+<img src="https://i.imgur.com/azlPqp0.png" alt="screenshot 4"/>
+<img src="https://i.imgur.com/aHHqe3J.png" alt="screenshot 5"/>
 <img src="https://i.imgur.com/SzLnUib.png" alt="screenshot 6"/>
 <img src="https://i.imgur.com/nLzoyac.png" alt="screenshot 7"/>
 <img src="https://i.imgur.com/6SK5iPp.png" alt="screenshot 8"/>
