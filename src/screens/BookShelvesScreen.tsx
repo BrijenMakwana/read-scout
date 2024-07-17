@@ -8,7 +8,7 @@ import Divider from '../components/Divider';
 import {BookShelves} from '../types';
 
 const BookShelvesScreen = () => {
-  const [selectedBtn, setSelectedBtn] = useState(BookShelves.Read);
+  const [selectedBookShelf, setSelectedBookShelf] = useState(BookShelves.Read);
 
   const {books} = useBookShelves();
 
@@ -31,13 +31,13 @@ const BookShelvesScreen = () => {
               value: BookShelves.CurrentlyReading,
             },
           ]}
-          value={selectedBtn}
-          setValue={setSelectedBtn}
+          value={selectedBookShelf}
+          setValue={setSelectedBookShelf}
         />
       </View>
 
       <FlatList
-        data={books.filter(item => item.bookShelfId === selectedBtn)}
+        data={books.filter(item => item.bookShelfId === selectedBookShelf)}
         renderItem={({item}) => <BookShelfItem {...item} />}
         keyExtractor={item => item.bookId}
         ItemSeparatorComponent={Divider}
