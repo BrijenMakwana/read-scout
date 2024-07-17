@@ -6,12 +6,11 @@ import {
   StyleSheet,
   useWindowDimensions,
 } from 'react-native';
-import {useRoute} from '@react-navigation/native';
+import {useRoute, RouteProp} from '@react-navigation/native';
 import useBook from '../hooks/useBook';
 import GoBack from '../components/GoBack';
 import BookItem from '../components/BookItem';
 import RenderHtml from 'react-native-render-html';
-import {RouteProp} from '@react-navigation/native';
 import {StackParamList} from '../types';
 import SelectBookShelf from '../components/SelectBookShelf';
 import moment from 'moment';
