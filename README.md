@@ -43,7 +43,6 @@
 
 - **Data Fetching**:
   - `TanStack Query` is used for data fetching and caching, ensuring efficient and reliable data management.
-  Th
 
 
 ## Screenshots
