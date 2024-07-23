@@ -9,6 +9,12 @@ interface ISelectBookShelf {
   bookId: string;
 }
 
+export const BOOK_SHELVES = [
+  {label: 'Want to Read', value: BookShelves.WantToRead},
+  {label: 'Read', value: BookShelves.Read},
+  {label: 'Currently Reading', value: BookShelves.CurrentlyReading},
+];
+
 const TickIcon = () => <Icon name="check" size={25} color="#4ecdc4" />;
 
 const SelectBookShelf = (props: ISelectBookShelf) => {
@@ -20,11 +26,7 @@ const SelectBookShelf = (props: ISelectBookShelf) => {
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(book?.bookShelfId);
-  const [items, setItems] = useState([
-    {label: 'Want to Read', value: BookShelves.WantToRead},
-    {label: 'Read', value: BookShelves.Read},
-    {label: 'Currently Reading', value: BookShelves.CurrentlyReading},
-  ]);
+  const [items, setItems] = useState(BOOK_SHELVES);
 
   return (
     <DropDownPicker

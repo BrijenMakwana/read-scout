@@ -6,6 +6,7 @@ import BookShelfItem from '../components/BookShelfItem';
 import GoBack from '../components/GoBack';
 import Divider from '../components/Divider';
 import {BookShelves} from '../types';
+import {BOOK_SHELVES} from '../components/SelectBookShelf';
 
 const BookShelvesScreen = () => {
   const [selectedBookShelf, setSelectedBookShelf] = useState(BookShelves.Read);
@@ -17,20 +18,7 @@ const BookShelvesScreen = () => {
       <View style={styles.topContainer}>
         <GoBack />
         <SegmentedButtons
-          buttons={[
-            {
-              label: 'want to read',
-              value: BookShelves.WantToRead,
-            },
-            {
-              label: 'read',
-              value: BookShelves.Read,
-            },
-            {
-              label: 'currently reading',
-              value: BookShelves.CurrentlyReading,
-            },
-          ]}
+          buttons={BOOK_SHELVES}
           value={selectedBookShelf}
           setValue={setSelectedBookShelf}
         />
