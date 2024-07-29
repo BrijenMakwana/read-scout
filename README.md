@@ -44,6 +44,9 @@
 - **Data Fetching**:
   - `TanStack Query` is used for data fetching and caching, ensuring efficient and reliable data management.
 
+- **TypeScript**:
+  - The app is developed using `TypeScript` for type safety and better code maintainability.
+
 
 ## Screenshots
 
