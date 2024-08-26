@@ -1,5 +1,7 @@
 # Read Scout (Book Management MacOS App)
 
+You can watch the tutorial on  [freeCodeCamp.org YouTube channel](https://youtu.be/-kizZZrh1zM?si=v-9N0wCIutEzoSGO)  where I teach how to build this project.
+
 ## Table of contents
 
 - [Overview](#overview)
